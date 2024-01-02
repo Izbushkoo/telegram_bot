@@ -11,5 +11,3 @@ class User(SQLModel, table=True):
     last_name: Optional[str]
     username: Optional[str]
 
-
-
