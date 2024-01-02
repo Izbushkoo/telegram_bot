@@ -19,4 +19,6 @@ COPY . .
 
 RUN poetry install
 
+ENV MODE=non-dev
+
 CMD poetry run python main.py

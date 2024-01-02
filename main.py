@@ -1,5 +1,6 @@
 import logging
 import asyncio
+import os
 import sys
 
 from aiogram import Bot, Dispatcher, types
@@ -33,5 +34,9 @@ async def main() -> None:
 
 
 if __name__ == "__main__":
+
+    if not os.getenv("MODE"):
+        os.environ["POSTGRES_SERVER"] = "localhost"
+
     logging.basicConfig(level=logging.INFO, stream=sys.stdout)
     asyncio.run(main())

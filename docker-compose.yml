@@ -1,6 +1,6 @@
 version: "3.8"
 services:
-  localhost:
+  postgres:
     container_name: postgres_telegram_bot
     image: postgres:15
     restart: unless-stopped
@@ -14,11 +14,13 @@ services:
       - ${POSTGRES_PORT}:5432
   bot_app:
     build: .
+    env_file:
+      - .env
     restart: unless-stopped
     networks:
       - telegram-bot
     depends_on:
-      - localhost
+      - postgres
 networks:
   telegram-bot:
     external: false
