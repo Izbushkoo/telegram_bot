@@ -11,6 +11,8 @@ load_dotenv()
 
 class Settings(BaseSettings):
 
+    API_URL: str
+
     BOT_TOKEN: str
     POSTGRES_SERVER: str
     POSTGRES_USER: str

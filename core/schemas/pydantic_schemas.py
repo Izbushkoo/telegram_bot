@@ -1,7 +1,6 @@
 from typing import Optional
 
 from pydantic import BaseModel, Field
-from sqlalchemy.ext.asyncio import AsyncSession
 from sqlmodel import Session
 from sqlmodel import select
 
